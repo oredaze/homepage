@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>~</title>
+	<title>~ home ~</title>
 	<link rel="stylesheet" style="text/css" href="general.css" />
 </head>
 <body>
 	<div class="main" style="display: block">
-		<div class="image-wrapper">
+		<div class="image-wrapper" onclick="plusSlides(1)">
 
 			<div class="mySlides fade">
 				<img src="img/side1.gif">
@@ -103,8 +103,6 @@
 				<img src="img/side23.gif">
 			</div>
 
-
-			<a class="next" onclick="plusSlides(1)">&#8734;</a>
 		</div>
 		<br>
 
@@ -136,63 +134,58 @@
 
 		<header>
 			<br>
-			<h1>おかえりなさいませ, <span class="flair">X A M P</span></h1>
+			<h1>おかえりなさいませ</h1>
 		</header>
 
 		<nav>
 			<br>
-			<ul class="blue">
-				<a style="font-size:22px">Social</a>
-				<li><a href="https://www.fb.com/">Facebook</a></li>
+			<ul class="red">
+				<a style="font-size:22px; color:#CC4747">|Main|</a>
 				<li><a href="https://www.youtube.com">Youtube</a></li>
-				<li><a href="https://reddit.com/">Reddit</a></li>
-				<li><a href="https://web.whatsapp.com/">Whatsapp</a></li>
-				<li><a href="https://twitter.com/">Twitter</a></li>
+				<li><a href="https://www.artstation.com/?sort_by=community">Artstation</a></li>
+				<li><a href="http://www.slackware.com/changelog/current.php?cpu=x86_64">Slackware</a></li>
 			</ul>
 
 			<ul class="green">
-				<a style="font-size:22px">Study</a>
-				<li><a href="https://kotlinlang.org/docs/reference/">Kotlin</a></li>
-				<li><a href="https://github.com/">Github</a></li>
-				<li><a href="https://classroom.google.com/u/0/h">G-Classroom</a></li>
-				<li><a href="https://meet.google.com/">G-Meet</a></li>
-				<li><a href="https://javascript.info/">Javascript</a></li>
+				<a style="font-size:22px; color:#96CC7A">|Entertain|</a>
+				<li><a href="https://anidb.net/anime/season">AniDB</a></li>
+				<li><a href="https://www.mangaupdates.com/mylist.html?list=wish">Manga</a></li>
+				<li><a href="https://readm.org/">Readm.org</a></li>
+				<li><a href="https://zelka.org/catalogue.php?catalog=series&letter=&g18=1&g6=1&g12=1&cat=&comb=no">Zamunda</a></li>
 			</ul>
 
-			<ul class="red">
-				<a style="font-size:22px">Anime</a>
-				<li><a href="https://9anime.to/">9anime</a></li>
-				<li><a href="https://www1.gogoanime.movie/">Gogoanime</a></li>
-				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
-				<li><a href="https://pixiv.net/">Pixiv</a></li>
-				<li><a href="https://nyaa.si/">Nyaa</a></li>
+			<ul class="blue">
+				<a style="font-size:22px; color:#3D85CC">|Social|</a>
+				<li><a href="https://reddit.com/">Reddit</a></li>
+				<li><a href="https://reddit.com/r/unixporn">Unixporn</a></li>
+				<li><a href="https://discord.com/channels/@me">Discord</a></li>
+				<li><a href="https://www.interpals.net/">Interpals</a></li>
 			</ul>
 
 			<ul class="yellow">
-				<a style="font-size:22px">Else</a>
-				<li><a href="https://filecr.com/">FileCR</a></li>
+				<a style="font-size:22px; color:#E6B673">|Misc|</a>
 				<li><a href="https://gmail.com/">Gmail</a></li>
-				<li><a href="https://amazon.in">Amazon</a></li>
-				<li><a href="https://katcr.to/">Katcr</a></li>
-				<li><a href="https://1337x.to/">1337x</a></li>
 				<li><a href="https://drive.google.com/drive/my-drive">Drive</a></li>
+				<li><a href="https://news.ycombinator.com/front">Hacker News</a></li>
+				<li><a href="https://archlinux.org/">Arch Linux</a></li>
 			</ul>
+
 		</nav>
 
 		<div class="codes" id="codes">
 			<script>
 			//document.getElementById("main").innerHTML = Date();
 			function updateClock() {
-				var days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+				var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 				var m = new Date();
+				var amOrPm = (m.getHours() < 12) ? "AM" : "PM";
 				var dateString =
-				(days[ m.getDay() ]) + " " +
-				("0" + m.getDate()).slice(-2) + "/" +
-				("0" + (m.getMonth()+1)).slice(-2) +"/"+
-				m.getFullYear() +" "+
-				("0" + m.getHours()).slice(-2) + ":" +
-				("0" + m.getMinutes()).slice(-2) + ":" +
-				("0" + m.getSeconds()).slice(-2);
+				(days[ m.getDay() ]) + ", " +
+				("0" + m.getDate()).slice(-2) + "-" +
+				("0" + (m.getMonth()+1)).slice(-2) +"-"+
+				m.getFullYear() +", "+
+				("0" + m.getHours() % 12 || 12).slice(-2) + ":" +
+				("0" + m.getMinutes()).slice(-2) + " " + amOrPm;
 
 				// set the content of the element with the ID codes to the formatted string
 				document.getElementById('codes').innerHTML = dateString;
