@@ -1,5 +1,5 @@
-Startpage
-========
+My Homepage
+===========
 
 ### Live Demo: <a href="http://oredaze.github.io/homepage/">Demo</a>
 
